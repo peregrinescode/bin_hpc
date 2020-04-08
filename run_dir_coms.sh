@@ -7,7 +7,7 @@ for f in $1*; do
   	if [ ${f: -4} == ".com" ]; then
     	echo "$f"
 
-    	sbatch run_com.sh $f
+    	sbatch -J ${f:0:8} run_com.sh $f
 	fi
   fi
 done
